@@ -1,17 +1,15 @@
 import React from 'react';
-import { Route } from 'react-router-dom'
-import Home from '../Home'
-import About from '../About'
-import UserProfile from '../UserProfile'
-import styles from './style.css'
-import Navbar from '../../components/Navbar'
+import { Route } from 'react-router-dom';
+import QuestionsList from '../QuestionsList';
+import SingleQuestion from '../SingleQuestion';
+import UserProfile from '../UserProfile';
+import styles from './style.css';
 
 export default () => (
   <div className={styles.App}>
-    <Navbar />
     <main className={styles.intro}>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
+      <Route exact path="/" component={QuestionsList} />
+      <Route exact path="/question/:id" component={SingleQuestion} />
       <Route exact path="/profile" component={UserProfile} />
     </main>
   </div>
